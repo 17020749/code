@@ -1,35 +1,39 @@
-<div class="container">
+<div class="container border" style="max-width:1024px" >
   <h1 class="mt-4">Thống kê toàn quốc</h1>
-    <table class="table table-hover mt-4">
-        <thead class="table-primary">
+  <div class="row">
+
+    <table class="table"  >
+      <thead>
+        <tr>
+          <th >#</th>
+          <th >cccd</th>
+          <th >hoTen</th>
+          <th >ngaySinh</th>
+          <th >gioiTinh</th>
+          <th >ketHon</th>
+          <th >queQuan</th>
+          <th >sửa</th>
+          <th >xóa</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each result}}
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">cccd</th>
-            <th scope="col">hoTen</th>
-            <th scope="col">ngaySinh</th>
-            <th scope="col">gioiTinh</th>
-            <th scope="col">ketHon</th>
-            <th scope="col">queQuan</th>
-            <th scope="col">sửa</th>
-            <th scope="col">xóa</th>
+            <th >{{this.id}}</th>
+            <td>{{this.cccd}}</td>
+            <td>{{this.hoTen}}</td>
+            <td>{{this.ngaySinh}}</td>
+            <td>{{this.gioiTinh}}</td>
+            <td>{{this.ketHon}}</td>
+            <td>{{this.queQuan}}</td>
+            <td><a href="/nhaplieu/{{this.id}}/edit"><i class="far fa-edit"></i></a></td>
+            <td><a href="#" data-id="{{this.id}}" data-bs-toggle="modal" data-bs-target="#delete-human"><i class="far fa-trash-alt"></i></a></td>
           </tr>
-        </thead>
-        <tbody>
-          {{#each result}}
-            <tr>
-              <th scope="row">{{this.id}}</th>
-              <td>{{this.cccd}}</td>
-              <td>{{this.hoTen}}</td>
-              <td>{{this.ngaySinh}}</td>
-              <td>{{this.gioiTinh}}</td>
-              <td>{{this.ketHon}}</td>
-              <td>{{this.queQuan}}</td>
-              <td><a href="/nhaplieu/{{this.id}}/edit"><i class="far fa-edit"></i></a></td>
-              <td><a href="#" data-id="{{this.id}}" data-bs-toggle="modal" data-bs-target="#delete-human"><i class="far fa-trash-alt"></i></a></td>
-            </tr>
-          {{/each}}
-        </tbody>
-    </table>
+        {{/each}}
+      </tbody>
+  </table> 
+  </div>
+     
 </div>
 
 <div class="container">
